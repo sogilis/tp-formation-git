@@ -1,5 +1,9 @@
 # TP3 : Corriger une erreur
 
+## Créer une branche de travail
+
+Créez et placez vous sur la branch tp3-oups.
+
 ## Créer un commit de revert
 
 Oups, les instructions de ce TP ont été écrasées par un collègue malicieux.
