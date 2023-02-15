@@ -1,48 +1,117 @@
-# TPs Formation Git Sogilis
+# TP4: Cherry-pick
 
-Dépôt d'exercices pratiques complémentaires à la formation Git Sogilis.
+## Objectif
++ Intégrer des modifs précises d'une autre branche par cherry-pick
 
-## Prérequis
+## Contexte
 
-Pour faire les TPs, vous aurez besoin des outils suivants :
-+ Git v2.23+
-+ python 3.9+
+Comme au TP1, vous allez implémenter la fonction sing dans lyrics.py dans une branche de feature.
+Vérifiez que les tests échouent en lançant `py -m unittest`.
 
-Cloner ce dépot en exécutant :
+## Créer une branche de feature
+
+Créez la branche de feature tp4-feature.
+<details>
+<summary>Spoiler</summary>
+
+```
+git branch tp4-feature
+```
+</details>
+
+## Ajouter des commits dans la branche de référence
+Pendant que vous travaillez sur la feature, des collègues ajoutent des scripts de test utilitaire dans la branche main.
+
+Créez un fichier test.sh contenant les lignes
 
 ```bash
-# avec https 
-git clone https://github.com/sogilis/tp-formation-git.git
+#!/bin/bash
 
-# avec ssh (vérifiez que votre clé ssh est bien configurée) 
-git clone git@github.com:sogilis/tp-formation-git.git
+py -m unittest
 ```
 
-Notez que dans les TPs, les commandes python utilisent `py` pour être exécutées.
-Remplacez cette commande par le nom de l'exécutable python installé sur votre poste, e.g. `python`, `python3`, `/usr/bin/python3.9`, etc.
+*Si vous êtes sous linux, modifiez les droits d'exécution de ce fichier avec `chmod +x test.sh`. NB: Ces droits sont aussi versionnés par git !*
 
-## Format des TPs
-
-Chaque TP représente un scénario d'utilisation de git.
-Les instructions sont spécifiées dans le `README.md` des branches correspondantes.
-Le but est d'utiliser les connaissances du cours pour appliquer ces instructions, les commandes git correspondantes ne sont donc pas directement données.
-
-En cas de blocage, pas de panique, une solution est disponible via une section dépliable de ce type:
+Commitez vos changements sur tp4-main.
 
 <details>
 <summary>Spoiler</summary>
 
 ```
-git command-that-solve-my-problem
+git add test.sh
+git commit -m "Add test.sh script"
 ```
 </details>
 
+Mais certains collègues sont sous Windows ! 
 
-## Démarrer un TP
+Créez un fichier test.bat contenant la ligne
 
-Pour chaque TP, entrez la command ```git checkout tp<n>-main``` pour commencer le TP.
-
-Exemple : pour commencer le TP n°1, entrez
 ```
-git checkout tp1-main
+py -m unittest
 ```
+
+Commitez vos changements, toujours sur tp4-main.
+
+<details>
+<summary>Spoiler</summary>
+
+```
+git add test.bat
+git commit -m "Add test.bat script"
+```
+</details>
+
+Visualisez l'historique avec `git log`. 
+
+## Implémenter sing dans la branche de feature
+
+Placez vous sur la branche tp4-feature.
+
+Implémentez la fonction sing et vérifiez que les tests passent avec la commande `py -m unittest`.
+
+Commitez vos changements.
+
+<details>
+<summary>Spoiler</summary>
+
+```
+git add lyrics.py
+git commit -m "Implemented sing"
+```
+</details>
+
+Un peu longuette cette commande `py -m unittest` non ?
+
+Récupérez le commit ajoutant le script de test de la branche tp4-main, en choisissant le commit correspondant à votre OS.
+
+<details>
+<summary>Spoiler</summary>
+
+```
+git cherry-pick <sha1-linux-or-windows>
+```
+</details>
+
+Vérifiez que vous pouvez maintenant exécuter les tests avec 
+```
+# Linux
+./test.sh
+
+# Windows
+test
+```
+## Merger la branche de feature
+
+Placez vous sur la branche tp4-main et mergez la branche tp4-feature.
+
+<details>
+<summary>Spoiler</summary>
+
+```
+git checkout tp4-main
+git merge tp4-feature
+```
+</details>
+
+Visualisez le contenu du commit de merge avec `git show HEAD`
