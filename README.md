@@ -1,48 +1,72 @@
-# TPs Formation Git Sogilis
+# TP3 : Corriger une erreur
 
-Dépôt d'exercices pratiques complémentaires à la formation Git Sogilis.
+## Créer un commit de revert
 
-## Prérequis
+Oups, les instructions de ce TP ont été écrasées par un collègue malicieux.
 
-Pour faire les TPs, vous aurez besoin des outils suivants :
-+ Git v2.23+
-+ python 3.9+
+Visualisez l'historique et repérez le commit "Delete instructions".
 
-Cloner ce dépot en exécutant :
-
-```bash
-# avec https 
-git clone https://github.com/sogilis/tp-formation-git.git
-
-# avec ssh (vérifiez que votre clé ssh est bien configurée) 
-git clone git@github.com:sogilis/tp-formation-git.git
-```
-
-Notez que dans les TPs, les commandes python utilisent `py` pour être exécutées.
-Remplacez cette commande par le nom de l'exécutable python installé sur votre poste, e.g. `python`, `python3`, `/usr/bin/python3.9`, etc.
-
-## Format des TPs
-
-Chaque TP représente un scénario d'utilisation de git.
-Les instructions sont spécifiées dans le `README.md` des branches correspondantes.
-Le but est d'utiliser les connaissances du cours pour appliquer ces instructions, les commandes git correspondantes ne sont donc pas directement données.
-
-En cas de blocage, pas de panique, une solution est disponible via une section dépliable de ce type:
+Générez un commit annulant ces modifications.
 
 <details>
 <summary>Spoiler</summary>
 
 ```
-git command-that-solve-my-problem
+# Either
+git revert <sha1>
+# Or
+git revert HEAD~1
+```
+</details>
+
+Visualisez à nouveau l'historique.
+
+## Annuler un commit local
+
+Annulez le commit de revert en conservant les changements associés.
+
+<details>
+<summary>Spoiler</summary>
+
+```
+git reset HEAD~1
+```
+</details>
+
+Visualiser l'historique, le commit de revert doit avoir disparu.
+
+Visualiser l'état local, les changements du commit annulés doivent apparaître dans les modifications locales.
+
+## Amender un commit local
+
+Visualiser l'historique. Le dernier commit doit avoir le message "Add instructions".
+
+Intégrez directement les changements locaux dans ce dernier commit.
+
+<details>
+<summary>Spoiler</summary>
+
+```
+git add .
+git commit --amend -m "Correct instructions"
+```
+</details>
+
+Visualiser le dernier commit avec `git show HEAD`. Le message et les modifications de ce commit doivent avoir été mis à jour avec nos changements.
+
+## Bonus : Répéter l'opération pour effacer le commit problématique
+
+Bien qu'amusant, le commit "Delete instructions" n'a finalement pas grand intérêt. En répétant un cycle de reset/amend, remplacez ce commit par le contenu intéressant de "Add more instructions".
+
+<details>
+<summary>Spoiler</summary>
+
+```
+git reset HEAD~
+git add .
+git commit --amend -m "Correct instructions"
 ```
 </details>
 
 
-## Démarrer un TP
-
-Pour chaque TP, entrez la command ```git checkout tp<n>-main``` pour commencer le TP.
-
-Exemple : pour commencer le TP n°1, entrez
-```
-git checkout tp1-main
-```
+*Ces opérations peuvent être effectuées de manières plus synthétiques avec d'autres commandes, notamment la commande rebase, que nous verrons dans les TP suivants.*
