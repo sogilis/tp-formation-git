@@ -44,7 +44,7 @@ git checkout -b tp1-feature
 ```
 </details>
 
-*Vous pouvez lister les branches existantes avec `git branch`. La branche courante est préfixée par le symbole '*'*
+*Vous pouvez lister les branches existantes avec `git branch`. La branche courante est préfixée par le symbole '\*'.*
 
 ## Faire passer les tests
 
@@ -96,7 +96,7 @@ Le fichier lyrics.py devrait apparaître dans la staging area
 
 ```
 Changes to be committed:
-    modified:   README.md
+    modified:   lyrics.py
 ```
 
 *Pour annuler cette opération vous pouvez utiliser la commande*
