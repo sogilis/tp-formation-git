@@ -7,15 +7,15 @@
 
 ## Contexte
 
-Les fonctions **first_verse** et **second_verse** de lyrics.py doivent chacune retourner les vers correpondants de Let It Be.
+Les fonctions **first_verse** et **second_verse** de lyrics.py doivent chacune retourner les vers correspondants de Let It Be.
 
 Vérifiez que les trois tests **sing**, **first_verse** et **second_verse** échouent avec `py -m unittest`.
 
-Vous allez implémenter chaque fonction dans des branches parallèle.
+Vous allez implémenter chaque fonction dans des branches parallèles.
 
-## Création des branche de travail
+## Création des branches de travail
 
-C'est parti, votre équipe s'est réparti le travail entre les fonctions **first_verse** et **second_verse** créez les branches correpondantes.
+C'est parti, votre équipe s'est réparti le travail entre les fonctions **first_verse** et **second_verse** créez les branches correspondantes.
 
 ```
 git branch tp2-first
@@ -125,7 +125,7 @@ Contrairement au merge précédent, des conflits entre main et second n'ont pas 
 
 Git indique les zones en conflits directement dans les fichiers concernés.
 
-Les modifications de la branche courante(ici tp2-main) sont indiquées en premier entre des lignes `<<<<<<< HEAD` et `=======`.
+Les modifications de la branche courante (ici tp2-main) sont indiquées en premier entre des lignes `<<<<<<< HEAD` et `=======`.
 
 Les modifications de la branche mergée dans la branche courante (ici tp2-second) sont indiquées entre des lignes `=======` et `>>>>>>> tp2-second`
 
@@ -137,11 +137,11 @@ return [...]
 >>>>>>> tp2-second
 ```
 
-Résolvez les conflits en modifiant directement les fichiers concernés (ne pas oublier de supprimer les lignes générées par git). 
+Résolvez les conflits en modifiant directement le fichier concerné (ne pas oublier de supprimer les lignes générées par git). 
 
 Vérifiez que tous les tests passent avec `py -m unittest`.
 
-Une fois satisfait, ajoutez les fichiers puis commitez (pas besoin de spécifier de message git en génère un automatiquement).
+Une fois satisfait, ajoutez les fichiers puis commitez (pas besoin de spécifier de message, git en génère un automatiquement).
 
 Prenez le temps de visualiser l'état courant à chaque étape avec `git status`.
 
