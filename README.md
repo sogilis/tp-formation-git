@@ -8,7 +8,7 @@
 
 ## Contexte
 
-Les fonctions **first_verse** et **second_verse** de lyrics.py doivent chacune retourner les vers correpondants de Let It Be.
+Les fonctions **first_verse** et **second_verse** de lyrics.py doivent chacune retourner les vers correspondants de Let It Be.
 
 Vérifiez que les tests **test_first_verse** et **test_second_verse** échouent avec `py -m unittest`.
 
@@ -45,7 +45,7 @@ Basculez maintenant sur la branche tp5-feature.
 
 ### Ajout d'un fichier paroles
 
-Pour être sur de ne pas les oublier, commencez par créer un fichier **letitbe.txt** contenant les paroles de la chanson
+Pour être sûr de ne pas les oublier, commencez par créer un fichier **letitbe.txt** contenant les paroles de la chanson
 
 <details>
 <summary>Paroles</summary>
