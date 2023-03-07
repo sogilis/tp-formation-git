@@ -156,7 +156,7 @@ Visualisez l'historique avec git log. Vous devriez voir trois commits après le 
 
 Finalement, vous connaissez la chanson par coeur, et pas besoin d'intégrer votre memo letitbe.txt à la branch main.
 
-Egalement, finalement, pas beoin de séparer votre implémentation en deux commits, qui peuvent être groupés en un seul.
+Egalement, finalement, pas besoin de séparer votre implémentation en deux commits, qui peuvent être groupés en un seul.
 
 Ces modifications de votre historique peuvent être effectuées en une commande avec un rebase interactif. Supprimez le commit de letitbe.txt et fusionnez les deux commits de l'implémentation de first_verse.
 
