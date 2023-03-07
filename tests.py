@@ -1,5 +1,5 @@
 import unittest
-from lyrics import sing, first_verse, second_verse
+from lyrics import first_verse, second_verse
 
 class LyricsTest(unittest.TestCase):
     def test_first_verse(self):
