@@ -9,5 +9,5 @@ def first_verse() -> list[str]:
 def second_verse() -> list[str]:
     return [
         "Let it be, let it be, let it be, let it be",
-        "Whisper words of wisdom, let it be",
+        "Whisper words of window, let it be",
     ]
