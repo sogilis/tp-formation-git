@@ -26,8 +26,8 @@ Exemple : pour commencer le TP n°1, entrez
 git checkout tp1-main
 ```
 
-```mermaid
 Test Gitgraph
+```mermaid
    gitGraph
        commit
        commit
