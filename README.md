@@ -8,12 +8,12 @@
 ## Contexte
 
 L'exécution de la commande `py -m unittest` montre que les tests sont actuellement en échec.
-Il est par conéquent légitime de se demander: quel commit a introduit la régression.
+Il est par conséquent légitime de se demander : quel commit a introduit la régression.
 
 L'historique de la branche vous montre que 100 commits suspicieux ont précédemment été ajoutés.
-Votre mission, si vous l'acceptez, est de déterminer le commit qui a mis les tests en defaut. 
+Votre mission, si vous l'acceptez, est de déterminer le commit qui a mis les tests en défaut. 
 
-## Lancement d'une bisection
+## Lancement d'une bissection
 
 Commencez par vérifier que les tests passent sur le commit "Suspicious commit #1"
 
@@ -26,7 +26,7 @@ py -m unittest
 ```
 </details>
 
-Demander à Git de démarrer une bisection sur les 100 derniers commits et indiquez manuellement si le commit courant passe les tests ou non.
+Demander à Git de démarrer une bissection sur les 100 derniers commits et indiquez manuellement si le commit courant passe les tests ou non.
 
 <details>
 <summary>Spoiler</summary>
@@ -43,7 +43,7 @@ git bisect [good|bad]
 ```
 </details>
 
-Une fois le commit problématique identifié, quittez le mode bisection.
+Une fois le commit problématique identifié, quittez le mode bissection.
 
 <details>
 <summary>Spoiler</summary>
@@ -53,9 +53,9 @@ git bisect reset
 ```
 </details>
 
-## Lancement d'une bisection automatique
+## Lancement d'une bissection automatique
 
-Le saviez-vous ? Vous pouvez aussi automatiser le lancement des tests durant l'opération de bisection ! \o/
+Le saviez-vous ? Vous pouvez aussi automatiser le lancement des tests durant l'opération de bissection ! \o/
 
 Pouvez-vous y arriver ?
 
@@ -72,7 +72,7 @@ git bisect reset
 ## Correction du commit problématique
 
 Le commit problématique est le commit #[<?>](## "44").
-Annlez les modifications de ce commit pour faire passer les tests de nouveau.
+Annulez les modifications de ce commit pour faire passer les tests de nouveau.
 
 <details>
 <summary>Spoiler</summary>
