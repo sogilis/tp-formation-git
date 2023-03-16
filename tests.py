@@ -4,26 +4,23 @@ from lyrics import sing, first_verse, second_verse
 class LyricsTest(unittest.TestCase):
     def test_sing(self):
         self.assertEquals(sing(), [
-            "When I find myself in times of trouble, Mother Mary comes to me",
-            "Speaking words of wisdom, let it be",
-            "And in my hour of darkness she is standing right in front of me",
-            "Speaking words of wisdom, let it be",
-
-            "Let it be, let it be, let it be, let it be",
-            "Whisper words of wisdom, let it be",
+            "Quand je me retrouve dans des moments difficiles, Mère Marie vient à moi",
+            "Prononçant des paroles de sagesse, laisse être",
+            "Et dans mon heure sombre elle se tient juste devant moi",
+            "Prononçant des paroles de sagesse, laisse être.",
             ])
 
     def test_first_verse(self):
         self.assertEquals(first_verse(), [
-            "When I find myself in times of trouble, Mother Mary comes to me",
-            "Speaking words of wisdom, let it be",
-            "And in my hour of darkness she is standing right in front of me",
-            "Speaking words of wisdom, let it be",
+            "Lorsque je me retrouve dans des moments difficiles, Mère Marie vient à moi",
+            "Prononçant des paroles de sagesse, laisse les être",
+            "Et dans mon heure de ténèbres, elle se tient juste devant moi",
+            "Prononçant des paroles de sagesse, laisse les être.",
         ])
 
     def test_second_verse(self):
         self.assertEquals(second_verse(), [
-            "Let it be, let it be, let it be, let it be",
-            "Whisper words of wisdom, let it be",
+            "Laissez-le être, laissez-le être, laissez-le être, laissez-le être,"
+            "Chuchotez des paroles de sagesse, laissez-le être.",
         ])
     
