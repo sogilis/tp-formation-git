@@ -1,48 +1,81 @@
-# TPs Formation Git Sogilis
+# TP7: Resolution de conflits
 
-Dépôt d'exercices pratiques complémentaires à la formation Git Sogilis.
+## Objectifs
 
-## Prérequis
++ Faire un rebase avec resolution des conflits
 
-Pour faire les TPs, vous aurez besoin des outils suivants :
-+ Git v2.23+
-+ python 3.9+
+## Contexte
 
-Cloner ce dépot en exécutant :
+Vous travaillez sur votre branche tp-7-dev. Suite à des changements de spec, on vous demande de vous rebaser sur tp7-main
 
-```bash
-# avec https 
-git clone https://github.com/sogilis/tp-formation-git.git
+## Lancement d'une bisection
 
-# avec ssh (vérifiez que votre clé ssh est bien configurée) 
-git clone git@github.com:sogilis/tp-formation-git.git
-```
-
-Notez que dans les TPs, les commandes python utilisent `py` pour être exécutées.
-Remplacez cette commande par le nom de l'exécutable python installé sur votre poste, e.g. `python`, `python3`, `/usr/bin/python3.9`, etc.
-
-## Format des TPs
-
-Chaque TP représente un scénario d'utilisation de git.
-Les instructions sont spécifiées dans le `README.md` des branches correspondantes.
-Le but est d'utiliser les connaissances du cours pour appliquer ces instructions, les commandes git correspondantes ne sont donc pas directement données.
-
-En cas de blocage, pas de panique, une solution est disponible via une section dépliable de ce type:
+Commencez par vérifier que les tests passent sur le commit "Suspicious commit #1"
 
 <details>
 <summary>Spoiler</summary>
 
-```
-git command-that-solve-my-problem
+```bash
+git switch HEAD~99
+py -m unittest
 ```
 </details>
 
+Demander à Git de démarrer une bisection sur les 100 derniers commits et indiquez manuellement si le commit courant passe les tests ou non.
 
-## Démarrer un TP
+<details>
+<summary>Spoiler</summary>
 
-Pour chaque TP, entrez la command ```git checkout tp<n>-main``` pour commencer le TP.
+```bash
+git bisect start HEAD HEAD~99
 
-Exemple : pour commencer le TP n°1, entrez
+py -m unittest
+git bisect [good|bad]
+
+py -m unittest
+git bisect [good|bad]
+[...]
 ```
-git checkout tp1-main
+</details>
+
+Une fois le commit problématique identifié, quittez le mode bisection.
+
+<details>
+<summary>Spoiler</summary>
+
+```bash
+git bisect reset
 ```
+</details>
+
+## Lancement d'une bisection automatique
+
+Le saviez-vous ? Vous pouvez aussi automatiser le lancement des tests durant l'opération de bisection ! \o/
+
+Pouvez-vous y arriver ?
+
+<details>
+<summary>Spoiler</summary>
+
+```bash
+git bisect start HEAD HEAD~99
+git bisect run py -m unittest
+git bisect reset
+```
+</details>
+
+## Correction du commit problématique
+
+Le commit problématique est le commit #[<?>](## "44").
+Annlez les modifications de ce commit pour faire passer les tests de nouveau.
+
+<details>
+<summary>Spoiler</summary>
+
+```bash
+git revert HEAD~56
+py -m unittest
+```
+</details>
+
+Fin du TP6, BRAVO ! :D
