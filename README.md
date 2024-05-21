@@ -79,7 +79,7 @@ Annulez les modifications de ce commit pour faire passer les tests de nouveau.
 <summary>Spoiler</summary>
 
 ```bash
-git revert HEAD~56
+git revert <sha1 du commit coupable>
 py -m unittest
 ```
 </details>
