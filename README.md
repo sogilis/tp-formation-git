@@ -21,17 +21,18 @@ Commencez par vérifier que les tests passent sur le commit "Suspicious commit #
 <summary>Spoiler</summary>
 
 ```bash
-git switch HEAD~99
+git switch <sha1 du commit 1>
 py -m unittest
 ```
 </details>
 
-Demander à Git de démarrer une bissection sur les 100 derniers commits et indiquez manuellement si le commit courant passe les tests ou non.
+Revenez sur le dernier commit puis demandez à Git de démarrer une bissection sur les 100 derniers commits et indiquez manuellement si le commit courant passe les tests ou non.
 
 <details>
 <summary>Spoiler</summary>
 
 ```bash
+git switch tp6-main
 git bisect start HEAD HEAD~99
 
 py -m unittest
