@@ -33,7 +33,7 @@ Revenez sur le dernier commit puis demandez à Git de démarrer une bissection s
 
 ```bash
 git switch tp6-main
-git bisect start HEAD HEAD~99
+git bisect start HEAD <sha1 du commit 1>
 
 py -m unittest
 git bisect [good|bad]
