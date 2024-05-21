@@ -4,8 +4,6 @@
 
 + Faire un rebase avec resolution des conflits
 
-## Contexte
-
 Vous travaillez sur votre branche tp-7-dev. Suite à des changements de spec, on vous demande de vous rebaser sur tp7-main
 
 ## Lancement d'une bisection
@@ -46,8 +44,7 @@ Une fois le commit problématique identifié, quittez le mode bisection.
 ```bash
 git bisect reset
 ```
-</details>
-
+  
 ## Lancement d'une bisection automatique
 
 Le saviez-vous ? Vous pouvez aussi automatiser le lancement des tests durant l'opération de bisection ! \o/
@@ -76,6 +73,7 @@ Annlez les modifications de ce commit pour faire passer les tests de nouveau.
 git revert HEAD~56
 py -m unittest
 ```
+
 </details>
 
-Fin du TP6, BRAVO ! :D
+Fin du TP7, BRAVO ! :D
