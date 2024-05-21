@@ -5,7 +5,6 @@ import os
 commit_count_start = 1
 commit_count_end = 3
 
-# boucle pour générer 10 commits
 for i in range(commit_count_start, commit_count_end):
     commit_message = f"Suspicious commit #{i}"
     
