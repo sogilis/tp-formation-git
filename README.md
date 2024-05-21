@@ -106,9 +106,6 @@ Les 'hunks' représentent des blocs de modifications groupées par git.
 
 Entrez 'e' pour splitter manuellement le hunk courant. Une interface de ce type s'affiche:
 
-<details>
-<summary>Spoiler</summary>
-
 ```
 # Manual hunk edit mode -- see bottom for a quick guide.
 @@ -1,66 +1,112 @@
@@ -126,7 +123,6 @@ Entrez 'e' pour splitter manuellement le hunk courant. Une interface de ce type 
 # edit again.  If all lines of the hunk are removed, then the edit is
 # aborted and the hunk is left unchanged.
 ```
-</details>
 
 Supprimez toutes les lignes sauf la première modifiée puis validez.
 
