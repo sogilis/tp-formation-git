@@ -1,5 +1,5 @@
 def sing() -> list[str]:
-    raise Exception("sing not implemented :(")
+    return first_verse() + second_verse()
 
 def first_verse() -> list[str]:
     raise Exception("firt_verse not implemented :(")
