@@ -10,4 +10,7 @@ def first_verse() -> list[str]:
         ]
 
 def second_verse() -> list[str]:
-    raise Exception("Hurry up :(")
+    return [
+            "Let it be, let it be, let it be, let it be",
+            "Whisper words of wisdom, let it be",
+        ]
