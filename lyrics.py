@@ -10,4 +10,4 @@ def first_verse() -> list[str]:
         ]
 
 def second_verse() -> list[str]:
-    raise Exception("second_verse not implemented :(")
+    raise Exception("Hurry up :(")
